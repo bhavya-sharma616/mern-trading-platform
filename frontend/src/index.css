@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #424242;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav-link{
+  margin-left:40px
+}
+.navbar {
+  background-color: #fff;
+}
+.small-links a {
+  font-size: 11px;        /* very small font */
+  color: #424242;
+  text-decoration: none;
+  white-space: nowrap;   /* keeps text in one line */
+}
+
+.small-links a:hover {
+  color:blue;
+}
+footer{
+ color: #4d5052;
+}
+footer a{
+ color: #6c757d;
+}
+footer i{
+  margin-right: 15px;
+  padding: 5px;
+  font-size: small;
+}
+a{
+  text-decoration: none;
+}
+
+.free-tag{
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+    background: #4caf50;
+    padding: 4px 10px;
+    border-radius: 2px;
+}
+
+.accordion-btn {
+  width: 100%;
+  padding: 20px;
+  background: #f8f8f8;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-btn.active {
+  background: #e2eaff;
+  
+}
+
+.accordion-btn i{
+  margin-right: 2rem;
+}
+.accordion-btn:hover{
+  transform: scale(1.02);
+ 
+}
+
+.accordion-content {
+  flex-direction: column;
+  padding: 0 12px;
+}
+
+.accordion-content a {
+  padding: 8px 0;
+  text-decoration: none;
+  color:#397DD0;
+  line-height: 3rem;
+  padding-left: 2rem;
+}
+
+.accordion-content a:hover {
+  background: #f1f1f1;
+}
+.accordion-btn .arrow {
+  float: right;
+  transition: transform 0.2s ease;
+}
+.accordion-btn.active .arrow {
+  transform: rotate(-180deg);
+}
+.additionalLinks{
+  background-color:#f8e9d1;
+  height: 150px;
+  padding-top: 1.5rem;
+  
+  border: 10px solid #ff3100;
+  border-right: none;
+  border-bottom: none;
+  border-top: none;
+  text-decoration: underline blue;
+}
+
+.quick-links a:hover{
+  color: #424242;
+}
+.get-otp:hover{
+  background-color: rgb(28, 27, 27);
+}
