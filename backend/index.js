@@ -16,7 +16,14 @@ const app=express();
 const cookieParser=require('cookie-parser');
 const authRoute=require("./routes/AuthRoute")
 
-app.use(cors())
+// allow credentials from our deployed frontend/dashboard domains
+app.use(cors({
+  origin: [
+    "https://mern-trading-platform.netlify.app",
+    "https://mern-trading-platform-dashboard.netlify.app",
+  ],
+  credentials: true,
+}));
 app.use(bodyParser.json())
 app.use(express.json());
 app.use(cookieParser())

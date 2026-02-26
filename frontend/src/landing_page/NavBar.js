@@ -29,6 +29,11 @@ function NavBar() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to={"/login"}>
+                  Login
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link active" to={"/about"}>
                   About
                 </Link>
@@ -47,6 +52,11 @@ function NavBar() {
                 <Link className="nav-link active" to={"/support"}>
                   Support
                 </Link>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link btn btn-sm btn-primary text-white" href="https://mern-trading-platform-dashboard.netlify.app" target="_blank" rel="noopener noreferrer" style={{marginLeft:'8px'}}>
+                  Dashboard
+                </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">

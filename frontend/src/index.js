@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import axios from 'axios';
+axios.defaults.withCredentials = true; // send cookies to backend
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import './index.css';
 import HomePage from './landing_page/home/HomePage';
@@ -12,6 +14,7 @@ import Footer from './landing_page/Footer'
 import NavBar from './landing_page/NavBar'
 import NotFound from './landing_page/NotFound';
 import SignupPage from './landing_page/signup/SignupPage';
+import Login from './landing_page/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +23,7 @@ root.render(
     <Routes>
       <Route path='/' element={<HomePage/>}/>
       <Route path='/signup' element={<SignupPage/>}/>
+      <Route path='/login' element={<Login/>}/>
       <Route path='/about' element={<AboutPage/>}/>
       <Route path='/pricing' element={<PricingPage/>}/>
       <Route path='/products' element={<ProductPage/>}></Route>

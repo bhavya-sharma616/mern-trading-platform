@@ -56,3 +56,9 @@ module.exports.Login = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+
+// clear the authentication cookie
+module.exports.Logout = (req, res) => {
+  res.clearCookie('token', { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'lax' });
+  res.json({ message: 'Logged out', success: true });
+};

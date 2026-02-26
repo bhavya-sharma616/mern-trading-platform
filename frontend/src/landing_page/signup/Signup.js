@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 function Signup() {
   return (
     <div className="container p-3  " style={{ color: "#424242" }}>
@@ -16,47 +17,75 @@ function Signup() {
         </div>
         <div className="col-5 mt-5">
           <h2>Sign up now</h2>
-          <p>Or track your existing application</p>
-          <div
-            className="input-group input-group-lg mt-5"
-            style={{ width: "100%" }}
-          >
-            <div className="input-group-prepend">
-              <span className="input-group-text p-2">
-                <img src="media/images/india-flag.svg"></img>+91
-              </span>
-            </div>
-            <input
-              type="tel"
-              pattern="[0-9]{10}"
-              maxLength="10"
-              placeholder="Enter your mobile number"
-              required
-              style={{ width: "60%" }}
-            />
-          </div>
-
-          <button
-            className="btn btn-primary get-otp mt-4 p-3"
-            style={{
-              width: "50%",
-              backgroundcColor: " #387ed1",
-              borderRadius: "0",
-            }}
-          >
-            GET OTP
-          </button>
-          <div className="mt-4 text-muted" style={{fontSize:"12px"}}>
-            <p>By proceeding, you agree to the Zerodha <a href="">terms & privacy policy</a></p>
-            <hr/><p>
-                Looking to open NRI account? <a href="">Click here</a>
-            </p>
+          <p>Create an account to access the dashboard</p>
+          <SignupForm />
         </div>
-        </div>
-        
         <div className="col"></div>
       </div>
-    </div>
+  );
+}
+
+
+
+function SignupForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(
+        "https://mern-trading-platform-j9bk.onrender.com/signup",
+        { name, email, password },
+        { withCredentials: true }
+      );
+      if (res.data.success) {
+        window.location.href = "https://mern-trading-platform-dashboard.netlify.app";
+      }
+    } catch (err) {
+      setError(err.response?.data?.message || "Signup failed");
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {error && <p className="text-danger">{error}</p>}
+      <div className="mb-3">
+        <label className="form-label">Name</label>
+        <input
+          type="text"
+          className="form-control"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">Email</label>
+        <input
+          type="email"
+          className="form-control"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">Password</label>
+        <input
+          type="password"
+          className="form-control"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </div>
+      <button type="submit" className="btn btn-primary">
+        Sign Up
+      </button>
+    </form>
   );
 }
 

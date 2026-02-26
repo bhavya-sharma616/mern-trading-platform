@@ -77,7 +77,7 @@ const Funds = () => {
         <div className="col">
           <div className="commodity">
             <p>You don't have a commodity account</p>
-            <Link className="btn btn-blue">Open Account</Link>
+            <a className="btn btn-blue" href="https://mern-trading-platform.netlify.app/signup" target="_blank" rel="noopener noreferrer">Open Account</a>
           </div>
         </div>
       </div>
