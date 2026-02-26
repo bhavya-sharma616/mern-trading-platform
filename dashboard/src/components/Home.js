@@ -3,13 +3,12 @@ import axios from "axios";
 
 import Dashboard from "./Dashboard";
 import TopBar from "./TopBar";
-import Login from "./Login";
 
 axios.defaults.withCredentials = true;
 
 const Home = () => {
   const [user, setUser] = useState(null);
-  const [checked, setChecked] = useState(false);
+  
 
   useEffect(() => {
     // verify cookie
@@ -21,13 +20,11 @@ const Home = () => {
         }
       })
       .catch(console.error)
-      .finally(() => setChecked(true));
+      
   }, []);
 
-  if (!checked) return <p>Checking authentication...</p>;
-  if (!user) {
-    return <Login onSuccess={(u) => setUser(u)} />;
-  }
+  
+  
 
   return (
     <>

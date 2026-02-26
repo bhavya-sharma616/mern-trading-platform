@@ -88,6 +88,16 @@ const Menu = () => {
               </p>
             </Link>
           </li>
+          <li>
+            <a
+              style={{ textDecoration: "none" }}
+              href="https://mern-trading-platform.netlify.app/support"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className={menuClass}>Support</p>
+            </a>
+          </li>
         </ul>
         <hr />
         <div className="profile" onClick={handleProfileClick}>

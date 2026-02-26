@@ -54,9 +54,9 @@ function NavBar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link btn btn-sm btn-primary text-white" href="https://mern-trading-platform-dashboard.netlify.app" target="_blank" rel="noopener noreferrer" style={{marginLeft:'8px'}}>
+                <Link className="nav-link active" to="https://mern-trading-platform-dashboard.netlify.app">
                   Dashboard
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">

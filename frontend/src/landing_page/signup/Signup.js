@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
+
+
 function Signup() {
   return (
     <div className="container p-3  " style={{ color: "#424242" }}>
@@ -21,6 +22,7 @@ function Signup() {
           <SignupForm />
         </div>
         <div className="col"></div>
+      </div>
       </div>
   );
 }
