@@ -7,7 +7,7 @@ import axios from 'axios'
 const Positions = () => {
   const [allPositions,setAllPositions]=useState([]);
   useEffect(()=>{
-    axios.get("http://localhost:3000/allPositions")
+    axios.get("https://mern-trading-platform-j9bk.onrender.com/allPositions")
     .then((res)=>{
       setAllPositions(res.data);
     })
