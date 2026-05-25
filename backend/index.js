@@ -231,6 +231,12 @@ app.post('/newOrder',async(req,res)=>{
   }
 })
 
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+});
+
 mongoose.connect(url)
   .then(() => {
     console.log("MongoDB connected");
